@@ -30,11 +30,11 @@ app.use('/api/tasks/:taskId/comments', commentRoutes);
 app.use('/api/users', userRoutes);
 
 // Serve static React frontend
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 // Fallback route for React Router (must be after API routes)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
 // Global Error Handler (no need for an extra 404 here)
