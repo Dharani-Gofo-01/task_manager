@@ -22,14 +22,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+
+// Static React frontend
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use('/api/tasks/:taskId/comments', commentRoutes);
 app.use('/api/users', userRoutes);
 
-// Static React frontend
-// app.use(express.static(path.join(__dirname, '../client/dist')));
 
 
 // React fallback route - must go *after* all API routes
