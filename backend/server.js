@@ -31,7 +31,7 @@ app.use('/api/users', userRoutes);
 // Static React frontend
 // app.use(express.static(path.join(__dirname, '../client/dist')));
     app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html')); // Adjust 'client' if needed
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')); // Adjust 'client' if needed
     });
 
 // React fallback route - must go *after* all API routes
