@@ -8,7 +8,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   build: {
-     outDir: path.resolve(__dirname, '../backend/client'), // default is fine
+    outDir: path.resolve(__dirname, '../backend/client'), // default is fine
     emptyOutDir: true,
   },
 });
