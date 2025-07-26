@@ -7,7 +7,7 @@ import tailwindcss from 'tailwindcss';
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: 'dist', // default is fine
+    path.resolve(__dirname, '../backend/client'), // default is fine
     emptyOutDir: true,
   },
 });
