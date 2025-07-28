@@ -9,7 +9,10 @@ export default function GuestLayout() {
   if (user) {
     return <Navigate to="/dashboard" />;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 682cd54a83a397224c83521119fdd915365dccf9
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-2 sm:p-0">
       <div className="w-full max-w-md sm:max-w-lg mx-auto">
