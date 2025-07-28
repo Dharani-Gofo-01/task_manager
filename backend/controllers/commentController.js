@@ -1,5 +1,6 @@
 // controllers/commentController.js code:
 const Comment = require('../models/Comment');
+
 // Get comments for a task
 exports.getComments = async (req, res) => {
   try {
@@ -11,6 +12,7 @@ exports.getComments = async (req, res) => {
     res.status(500).json({ message: 'Error fetching comments' });
   }
 };
+
 // Add a comment to a task
 exports.addComment = async (req, res) => {
   try {
@@ -22,9 +24,10 @@ exports.addComment = async (req, res) => {
     const populated = await comment.populate('user', 'name');
     res.status(201).json(populated);
   } catch (error) {
-    res.status(500).json({ message: 'Error adding comment' });
+    res.status(500).json({ message: 'Error on adding comment' });
   }
 };
+
 // Update a comment
 exports.updateComment = async (req, res) => {
   try {

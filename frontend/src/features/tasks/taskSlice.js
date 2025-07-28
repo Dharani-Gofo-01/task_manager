@@ -7,7 +7,7 @@ const initialState = {
   error: null,
 };
 
-// ✅ Fetch All Tasks
+//  Fetch All Tasks
 export const fetchTasks = createAsyncThunk(
   'tasks/fetchTasks',
   async (_, thunkAPI) => {
@@ -20,7 +20,7 @@ export const fetchTasks = createAsyncThunk(
   }
 );
 
-// ✅ CREATE Task
+//  CREATE Task
 export const createTask = createAsyncThunk(
   'tasks/createTask',
   async (taskData, thunkAPI) => {
@@ -33,7 +33,7 @@ export const createTask = createAsyncThunk(
   }
 );
 
-// ✅ UPDATE Task
+//  UPDATE Task
 export const updateTask = createAsyncThunk(
   'tasks/updateTask',
   async ({ id, updatedData }, thunkAPI) => {
@@ -59,7 +59,7 @@ export const updateTaskStatus = createAsyncThunk(
   }
 );
 
-// ✅ DELETE Task
+//  DELETE Task
 export const deleteTask = createAsyncThunk(
   'tasks/deleteTask',
   async (id, thunkAPI) => {

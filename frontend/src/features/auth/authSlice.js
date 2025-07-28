@@ -14,7 +14,7 @@ const initialState = {
   error: null,
 };
 
-// ✅ LOGIN
+//  LOGIN
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async (formData, thunkAPI) => {
@@ -30,7 +30,7 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-// ✅ REGISTER
+//  REGISTER
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async (formData, thunkAPI) => {
@@ -43,7 +43,7 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-// ✅ SLICE
+//  SLICE
 const authSlice = createSlice({
   name: 'auth',
   initialState,

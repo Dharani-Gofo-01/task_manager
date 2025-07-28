@@ -7,6 +7,7 @@ const cors = require('cors');
 require('dotenv').config();
 require('./config/db')(); // MongoDB connection
 
+// Routes
 const authRoutes = require('./routes/authRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 const commentRoutes = require('./routes/commentRoutes');
@@ -28,23 +29,21 @@ app.use('/api/tasks', taskRoutes);
 app.use('/api/tasks/:taskId/comments', commentRoutes);
 app.use('/api/users', userRoutes);
 
-// Static React frontend
-app.use(express.static(path.join(__dirname, '../client/dist'))); // ✅ If using Vite build
+// Serve static React frontend
+app.use(express.static(path.join(__dirname, 'client')));
 
-// React fallback route - must go *after* all API routes
+// Fallback route for React Router (must be after API routes)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
-// 404 and global error handler
-app.use((req, res, next) => next(createError(404)));
-
+// Global Error Handler (no need for an extra 404 here)
 app.use((err, req, res, next) => {
-  res.status(err.status || 500).json({ message: err.message });
+  res.status(err.status || 500).json({ message: err.message || 'Server Error' });
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(` Server running at http://localhost:${PORT}`);
 });
 
 module.exports = app;

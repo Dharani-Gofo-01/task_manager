@@ -9,7 +9,7 @@ const {
   updateTaskStatus
 } = require('../controllers/taskController');
 
-const { protect } = require('../middleware/authMiddleware'); // ✅ your JWT middleware
+const { protect } = require('../middleware/authMiddleware'); //  your JWT middleware
 
 // Protect all routes
 router.get('/', protect, getTasks);

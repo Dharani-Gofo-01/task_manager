@@ -8,7 +8,7 @@ const initialState = {
   error: null,
 };
 
-// ✅ Thunk to fetch all users (admin only)
+//  Thunk to fetch all users (admin only)
 export const fetchUsers = createAsyncThunk(
   "users/fetchUsers",
   async (_, { rejectWithValue }) => {
