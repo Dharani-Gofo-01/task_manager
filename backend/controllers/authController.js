@@ -32,4 +32,3 @@ module.exports = {
   login,
   getMe,
 };
-

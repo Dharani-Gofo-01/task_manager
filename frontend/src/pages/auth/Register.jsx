@@ -49,7 +49,7 @@ export default function Register() {
           required
           className="w-full border px-3 py-2"
           onChange={handleChange}
-  autoComplete="current-password" // ✅ This fixes the warning
+  autoComplete="current-password" //  This fixes the warning
         />
         <select
           name="role"
